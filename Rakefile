@@ -79,5 +79,5 @@ end
 
 desc "Fires up the Vagrant box."
 task :start do
-    puts "Nothing do to yet..."
+    sh "vagrant up"
 end

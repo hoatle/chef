@@ -141,3 +141,7 @@ tmp
 .yardoc
 _yardoc
 doc/
+
+## teracy
+
+.vagrant
