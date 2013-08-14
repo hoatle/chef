@@ -13,7 +13,7 @@ template '/etc/motd.tail' do
 
     company_name = data_bag_item['name']
     filler = '#' * company_name.length
-    space_filler = " " * company_name.length
+    space_filler = ' ' * company_name.length
 
     variables(
         :company_name => company_name,

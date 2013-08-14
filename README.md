@@ -18,6 +18,14 @@ Build status
 How to install
 --------------
 
+- Follow guide: http://neverstopbuilding.net/chef-best-practices-a-series/
+
+- Update submodules:
+
+``` bash
+git submodule init
+git submodule update
+```
 
 How to configure
 ----------------

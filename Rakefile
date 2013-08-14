@@ -93,6 +93,11 @@ task :chefspec do
     sh "bundle exec rspec cookbooks"
 end
 
+desc "Runs foodcritic against all the cookbooks."
+task :foodcritic do
+    sh "bundle exec foodcritic -I test/foodcritic/* -f any cookbooks"
+end
+
 desc "Fires up the Vagrant box."
 task :start do
     sh "vagrant up"
