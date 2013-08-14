@@ -3,6 +3,17 @@ teracy chef
 
 teacy chef to setup, manage all teracy's infrastucture.
 
+Build status
+------------
+
+- `master` branch:
+
+    [![Build Status](https://travis-ci.org/hoatle/chef.png?branch=master)](https://travis-ci.org/hoatle/chef)
+
+- `develop` branch:
+
+    [![Build Status](https://travis-ci.org/hoatle/chef.png?branch=develop)](https://travis-ci.org/hoatle/chef)
+
 
 How to install
 --------------
