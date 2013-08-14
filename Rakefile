@@ -74,7 +74,7 @@ end
 
 desc "Builds the package."
 task :build do
-    puts "Nothing to do yet..."
+    Rake::Task[:chefspec].execute
 end
 
 desc "Creates a new cookbook."
@@ -86,6 +86,11 @@ task :new_cook_book, :name do |t, args|
   end
     sh "bundle exec knife cookbook create #{name}"
     sh "bundle exec knife cookbook create_specs #{name}"
+end
+
+desc "Runs chefspec on all the cookbooks."
+task :chefspec do
+    sh "bundle exec rspec cookbooks"
 end
 
 desc "Fires up the Vagrant box."
