@@ -77,7 +77,23 @@ task :build do
     puts "Nothing to do yet..."
 end
 
+desc "Creates a new cookbook."
+task :new_cook_book, :name do |t, args|
+  if args.name
+    name = args.name
+  else
+    name = get_stdin("Enter a name for your new cookbook: ")
+  end
+    sh "bundle exec knife cookbook create #{name}"
+    sh "bundle exec knife cookbook create_specs #{name}"
+end
+
 desc "Fires up the Vagrant box."
 task :start do
     sh "vagrant up"
+end
+
+def get_stdin(message)
+  print message
+  STDIN.gets.chomp
 end
