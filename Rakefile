@@ -4,7 +4,7 @@ task :default => [:list]
 
 desc "List all the tasks."
 task :list do
-    puts "Tasks: \n- #{(Rake::Task.tasks).join("\n- ")}"
+  puts "Tasks: \n- #{(Rake::Task.tasks).join("\n- ")}"
 end
 
 desc "Checks for required dependencies."
@@ -74,7 +74,9 @@ end
 
 desc "Builds the package."
 task :build do
-    Rake::Task[:chefspec].execute
+  Rake::Task[:knife_test_ci].execute
+  Rake::Task[:foodcritic].execute
+  Rake::Task[:chefspec].execute
 end
 
 desc "Builds the package for ci server."
@@ -87,22 +89,23 @@ end
 desc "Creates a new cookbook."
 task :new_cookbook, :name do |t, args|
   if args.name
-    name = args.name
+      name = args.name
   else
-    name = get_stdin("Enter a name for your new cookbook: ")
+      name = get_stdin("Enter a name for your new cookbook: ")
   end
-    sh "bundle exec knife cookbook create #{name}"
-    sh "bundle exec knife cookbook create_specs #{name}"
+
+  sh "bundle exec knife cookbook create #{name}"
+  sh "bundle exec knife cookbook create_specs #{name}"
 end
 
 desc "Runs chefspec on all the cookbooks."
 task :chefspec do
-    sh "bundle exec rspec cookbooks"
+  sh "bundle exec rspec cookbooks"
 end
 
 desc "Runs foodcritic against all the cookbooks."
 task :foodcritic do
-    sh "bundle exec foodcritic -I test/foodcritic/* -f any cookbooks"
+  sh "bundle exec foodcritic -I test/foodcritic/* -f any cookbooks"
 end
 
 desc "Runs knife cookbook test against all the cookbooks."
@@ -117,7 +120,7 @@ end
 
 desc "Fires up the Vagrant box."
 task :start do
-    sh "vagrant up"
+  sh "vagrant up"
 end
 
 def get_stdin(message)
