@@ -50,7 +50,7 @@ GEM
       app_conf (>= 0.4.0)
       chef (>= 0.10.4)
       git (>= 1.2.5)
-    mime-types (1.23)
+    mime-types (1.24)
     minitest (4.7.5)
     minitest-chef-handler (1.0.1)
       chef
@@ -80,7 +80,7 @@ GEM
       systemu
       yajl-ruby
     polyglot (0.3.3)
-    rake (10.0.4)
+    rake (10.1.0)
     rest-client (1.6.7)
       mime-types (>= 1.16)
     rspec (2.14.1)
@@ -105,4 +105,4 @@ DEPENDENCIES
   chefspec (= 1.0.0)
   foodcritic (= 2.2.0)
   knife-spork (~> 1.0.17)
-  rake (= 10.0.4)
+  rake (= 10.1.0)
