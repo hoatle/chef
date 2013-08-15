@@ -1,0 +1,12 @@
+{
+  "sha": "85df187c75a59f028dfbc03d79a800185e7dc280",
+  "sources": {
+    "minitest-handler": {
+      "locked_version": "0.1.7",
+      "constraint": "= 0.1.7"
+    },
+    "chef_handler": {
+      "locked_version": "1.1.4"
+    }
+  }
+}

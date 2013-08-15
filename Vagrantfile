@@ -103,6 +103,8 @@ Vagrant.configure("2") do |config|
     chef.validation_client_name = "#{ENV['OPSCODE_ORGNAME']}-validator"
     chef.node_name = "#{ENV['OPSCODE_USER']}-vagrant"
     chef.run_list = [
+      'motd',
+      'minitest-handler'
     ]
   end
   #

@@ -1,4 +1,4 @@
-source "http://rubygems.org"
+source 'http://rubygems.org'
 
 ruby '1.9.3'
 
@@ -8,5 +8,6 @@ gem 'chefspec', '1.0.0'
 gem 'foodcritic', '2.2.0'
 
 group :development do
-  gem "knife-spork", "~> 1.0.17"
+  gem 'knife-spork', '~> 1.0.17'
+  gem 'berkshelf', '2.0.3'
 end

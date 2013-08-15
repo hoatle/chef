@@ -118,6 +118,11 @@ task :knife_test_ci do
   sh "bundle exec knife cookbook test -a -c test/knife.rb"
 end
 
+desc "Uploads Berkshelf cookbooks to our chef server."
+task :berks_upload do
+  sh "bundle exec berks upload -c config/berks-config.json"
+end
+
 desc "Fires up the Vagrant box."
 task :start do
   sh "vagrant up"
