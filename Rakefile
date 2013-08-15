@@ -96,6 +96,13 @@ task :new_cookbook, :name do |t, args|
 
   sh "bundle exec knife cookbook create #{name}"
   sh "bundle exec knife cookbook create_specs #{name}"
+  minitest_path = "cookbooks/#{name}/files/default/tests/minitest"
+  mkdir_p minitest_path
+  File.open("#{minitest_path}/default_test.rb", 'w') do |test|
+    test.puts "require 'minitest/spec'"
+    test.puts "describle_recipe '#{name}::default' do"
+    tests.puts "end"
+  end
 end
 
 desc "Runs chefspec on all the cookbooks."
