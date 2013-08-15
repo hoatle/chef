@@ -85,7 +85,7 @@ task :build_ci do
 end
 
 desc "Creates a new cookbook."
-task :new_cook_book, :name do |t, args|
+task :new_cookbook, :name do |t, args|
   if args.name
     name = args.name
   else
